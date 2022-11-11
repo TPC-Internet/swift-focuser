@@ -16,7 +16,7 @@ public extension View {
 
 @available(iOS 14.0, *)
 public extension View {
-    func focusEditor<T: FocusStateCompliant>(_ focusedField: Binding<T?>, equals: T) -> some View {
+    func focusEditor<T: Hashable>(_ focusedField: Binding<T?>, equals: T) -> some View {
         modifier(FocusModifierTextEditor(focusedField: focusedField, equals: equals))
     }
 }
